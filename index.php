@@ -21,7 +21,7 @@
     <!-- | Header | -->
     <header>
         <div class="sx_nav">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amazon_Prime_Video_logo.svg/1280px-Amazon_Prime_Video_logo.svg.png" alt="Logo Prime Video">
+            <img src="img/prime-video-logo.png" alt="Logo Prime Video">
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -34,7 +34,7 @@
         </div>
         <div class="dx_nav">
             <i class="fas fa-search"></i>
-            <div class="user_img"></div>
+            <i class="fas fa-user"></i>
             <p>Cristiano</p>
         </div>
     </header>
@@ -51,9 +51,73 @@
                         <li><?php echo $movie1->anno; ?></li>
                     </ul>
                     <p><?php echo $movie1->descrizione; ?></p>
+
+                    <div class="extra_info">
+                        <div class="row">
+                            <h4>Regia</h4>
+                            <a href=""><?php echo $movie1->regista; ?></a>
+                        </div>
+                        <div class="row">
+                            <h4>Interpreti</h4>
+                            <a href="#">
+                            <?php 
+                                $i = 0;
+                                $cast = $movie1->cast;
+                                $c = count($cast);
+                            
+                                foreach ($cast as $key => $val) {
+
+                                    if ($i++ < $c - 1) {
+                                        echo $val .= ', ';
+                                    } else {
+                                        echo $val;
+                                    }
+                                }
+                            ?>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <h4>Genere</h4>
+                            <a href=""><?php echo $movie1->genere; ?></a>
+                        </div>
+                        <div class="row">
+                            <h4>Lingua Audio</h4>
+                            <a href=""><?php echo $movie1->lingua; ?></a>
+                        </div>
+                    </div>
+
+                    <div class="buttons_container">
+                        <div class="play_btn">Riproduci</div>
+                        <div class="extra_btn">Altre opzioni d'acquisto</div>
+                        <i class="fas fa-play"></i>
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-user-friends"></i>
+                        <i class="fas fa-download"></i>
+                    </div>
+
+                    <p>Facendo clic su Riproduci accetti i nostri <a href="#">Termini di utilizzo.</a></p>
+                </div>
+                <div class="share_container">
+                    <i class="fas fa-share-alt"></i>
+                    <p>Condividi</p>
+                    <i class="fas fa-pen"></i>
+                    <p>Feedback</p>
+                    <i class="far fa-question-circle"></i>
+                    <p>Ottieni assistenza</p>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- | FOOTER | -->
+    <footer>
+        <img src="img/prime-video-logo.png" alt="Logo Prime Video">
+        <ul>
+            <li><a href="#">Termini di utilizzo e informativa sulla privacy</a></li>
+            <li><a href="#">Invia commenti</a></li>
+            <li><a href="#">Aiuto</a></li>
+            <li>© 1996-2021, Amazon.com, Inc. o società affiliate</li>
+        </ul>
+    </footer>
 </body>
 </html>
